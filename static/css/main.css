@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'HighTower';
+    src: url('HTOWERT.TTF');
+  }
+
+body {
+    background-color: black;
+    color:green;
+    font-family: 'HighTower';
+}
+
+.cntr {
+    text-align: center;
+}
+
+.side_by_side {
+    display: inline-block;
+}
+
+.btn {
+    transition-duration: 0.4s;
+    border: green;
+    border-radius: 5px;
+    background-color: green;
+    font-size: larger;
+    margin: 10px;
+    padding: 10px;
+    font-family: 'HighTower';
+}
+
+.btn:hover {
+    color: green;
+    background-color: white;
+}
+
+.btn:active{
+    color:darkgreen;
+}

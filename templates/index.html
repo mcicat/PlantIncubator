@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Plant incubator</title>
+{% endblock %}
+
+
+{% block body %}
+<div class="cntr">
+    <img src="static/logo.png" width="35%" style="padding: 30px;">
+</div>
+
+<div class="cntr">
+    <form method="post" action="/led_on" class="side_by_side">
+        <input value="LED ON" name="btn" class="btn" type="submit"></input>
+    </form>
+
+    <form method="post" action="/led_off" class="side_by_side">
+        <input value="LED OFF" name="btn" class="btn" type="submit"></input>
+    </form>
+</div>
+{% endblock %}
