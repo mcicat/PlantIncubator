@@ -7,7 +7,7 @@
 
 {% block body %}
 <div class="cntr">
-    <img src="static/logo.png" width="15%" style="padding: 30px;" >
+    <a href="."><img src="static/logo.png" width="15%" style="padding: 30px;"></a>
 </div>
 
 <div class="cntr">
@@ -18,5 +18,32 @@
     <form method="post" action="/led_off" class="side_by_side">
         <input value="LED OFF" name="btn" class="btn" type="submit"></input>
     </form>
+
+    <div style="margin-top: 2cm;" >
+        <form method="post" action="/timer_on" >
+            <p>Status: {{ (timer_log) }}</p>
+
+            <div id="timer_panel">
+                <div>
+                    <p class="side_by_side">Start time:</p>
+                    <input class="side_by_side" name="timer_start" type="time"></input>
+                </div>
+
+                <div>
+                    <p class="side_by_side">Start time:</p>
+                    <input class="side_by_side" name="timer_stop" type="time"></input>
+                </div>
+            </div>
+
+            <div>
+                <input class ="btn" value="SET TIMER" name="timer_set" type="submit" width="4cm"></input>
+            </div>
+        </form>
+        <form method="post" action="/timer_off" >
+            <input class="btn" value="UNSET TIMER" name="timer_set" type="submit" width="4cm"></input>
+        </form>
+    </div>
 </div>
+
+
 {% endblock %}
