@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
-     inkscape:cx="2657.3185"
-     inkscape:cy="725.65953"
+     inkscape:cx="2716.0084"
+     inkscape:cy="709.39607"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -74,63 +74,77 @@
        x="587.29065"
        y="77.825111" />
     <g
-       id="g1512"
-       inkscape:export-xdpi="429.81"
-       inkscape:export-ydpi="429.81">
+       id="g928"
+       inkscape:export-xdpi="429"
+       inkscape:export-ydpi="429">
       <g
-         id="g1468">
+         id="g896">
         <g
-           id="g1421">
-          <g
-             id="g1102"
-             transform="translate(624.41666,152.4)">
-            <path
-               style="fill:#008000;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-               d="m 64.737691,-0.24221327 c 0,0 29.209266,61.84905427 31.614694,83.49788427"
-               id="path869"
-               sodipodi:nodetypes="cc" />
-            <path
-               style="fill:#008000;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-               d="m 71.429337,16.414339 c 0,0 -4.144376,22.11185 -21.114531,5.300529 -12.836415,-12.7162712 -7.450201,-51.135881 -7.450201,-51.135881 0,0 41.905512,9.54635 42.846225,35.7324938 C 86.115168,17.566824 71.429337,16.414339 71.429337,16.414339 Z"
-               id="path873"
-               sodipodi:nodetypes="cscsc" />
-          </g>
-          <g
-             id="g1108"
-             transform="matrix(-1,0,0,1,817.12143,152.4)">
-            <path
-               style="fill:#008000;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-               d="m 64.737691,-0.24221327 c 0,0 29.209266,61.84905427 31.614694,83.49788427"
-               id="path1104"
-               sodipodi:nodetypes="cc" />
-            <path
-               style="fill:#008000;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-               d="m 71.429337,16.414339 c 0,0 -4.144376,22.11185 -21.114531,5.300529 -12.836415,-12.7162712 -7.450201,-51.135881 -7.450201,-51.135881 0,0 41.905512,9.54635 42.846225,35.7324938 C 86.115168,17.566824 71.429337,16.414339 71.429337,16.414339 Z"
-               id="path1106"
-               sodipodi:nodetypes="cscsc" />
-          </g>
+           id="g1102"
+           transform="translate(624.41666,152.4)">
           <path
-             style="fill:#ffffff;stroke:#ffffff;stroke-width:0.366417px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             d="m 668.66773,218.31085 h 109.40755 c 0,0 -55.76323,225.62495 -109.40755,0 z"
-             id="path1378"
-             sodipodi:nodetypes="ccc" />
+             style="fill:#008000;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 64.737691,-0.24221327 c 0,0 29.209266,61.84905427 31.614694,83.49788427"
+             id="path869"
+             sodipodi:nodetypes="cc" />
+          <path
+             style="fill:#008000;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 71.429337,16.414339 c 0,0 -4.144376,22.11185 -21.114531,5.300529 -12.836415,-12.7162712 -7.450201,-51.135881 -7.450201,-51.135881 0,0 41.905512,9.54635 42.846225,35.7324938 C 86.115168,17.566824 71.429337,16.414339 71.429337,16.414339 Z"
+             id="path873"
+             sodipodi:nodetypes="cscsc" />
         </g>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:12.3472px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.355769"
-           x="721.53265"
-           y="231.57991"
-           id="text1425"><tspan
-             sodipodi:role="line"
-             x="721.53265"
-             y="231.57991"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.3472px;font-family:'High Tower Text';-inkscape-font-specification:'High Tower Text';text-align:center;text-anchor:middle;fill:#008000;stroke:#008000;stroke-width:0.355769"
-             id="tspan1431">PLANT </tspan><tspan
-             sodipodi:role="line"
-             x="721.53265"
-             y="247.59544"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.3472px;font-family:'High Tower Text';-inkscape-font-specification:'High Tower Text';text-align:center;text-anchor:middle;fill:#008000;stroke:#008000;stroke-width:0.355769"
-             id="tspan1486">INCUBATOR</tspan></text>
+        <g
+           id="g1108"
+           transform="matrix(-1,0,0,1,817.12143,152.4)">
+          <path
+             style="fill:#008000;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 64.737691,-0.24221327 c 0,0 29.209266,61.84905427 31.614694,83.49788427"
+             id="path1104"
+             sodipodi:nodetypes="cc" />
+          <path
+             style="fill:#008000;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="m 71.429337,16.414339 c 0,0 -4.144376,22.11185 -21.114531,5.300529 -12.836415,-12.7162712 -7.450201,-51.135881 -7.450201,-51.135881 0,0 41.905512,9.54635 42.846225,35.7324938 C 86.115168,17.566824 71.429337,16.414339 71.429337,16.414339 Z"
+             id="path1106"
+             sodipodi:nodetypes="cscsc" />
+        </g>
+      </g>
+      <g
+         id="g912">
+        <rect
+           style="fill:#ffffff;stroke:none;stroke-width:0.130774"
+           id="rect898"
+           width="96.392456"
+           height="16.825272"
+           x="672.57281"
+           y="218.12801" />
+        <g
+           id="g904"
+           transform="translate(4.1368429)">
+          <rect
+             style="fill:#ffffff;stroke:none;stroke-width:0.299573"
+             id="rect877"
+             width="96.392456"
+             height="88.293144"
+             x="668.43597"
+             y="218.12801"
+             ry="10" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:12.3472px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.355769"
+             x="716.29755"
+             y="240.78889"
+             id="text1425"><tspan
+               sodipodi:role="line"
+               x="716.29755"
+               y="240.78889"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.3472px;font-family:'High Tower Text';-inkscape-font-specification:'High Tower Text';text-align:center;text-anchor:middle;fill:#008000;stroke:#008000;stroke-width:0.355769"
+               id="tspan1431">PLANT </tspan><tspan
+               sodipodi:role="line"
+               x="716.29755"
+               y="256.80441"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.3472px;font-family:'High Tower Text';-inkscape-font-specification:'High Tower Text';text-align:center;text-anchor:middle;fill:#008000;stroke:#008000;stroke-width:0.355769"
+               id="tspan1486">INCUBATOR</tspan></text>
+        </g>
       </g>
     </g>
   </g>
