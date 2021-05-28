@@ -9,6 +9,16 @@
 <div class="cntr">
     <a href="."><img src="static/logo.png" width="15%" style="padding: 30px;"></a>
 </div>
+<div>
+    <p id="txt_time" style="text-align: center;"></p>
+    <script>
+        var txt = document.getElementById("txt_time")
+
+        var d = new Date();
+        
+        txt.innerHTML = `Current server time: ${d.getHours()}:${d.getMinutes()}`
+    </script>
+</div>
 
 <div class="cntr">
     <form method="post" action="/led_on" class="side_by_side">
