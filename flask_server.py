@@ -135,11 +135,28 @@ def led_off():
 @app.route('/timer_on', methods=['POST'])
 def timer_on():
     if request.method == 'POST':
-        time_start = request.form.get("timer_start")
-        time_stop = request.form.get("timer_stop")
-    
         
-        timer.save_timer_config(timer_start = time_start,timer_stop=time_stop)
+        time_start_hours = request.form.get("timer_start_hours")
+        time_start_minutes = request.form.get("timer_start_minutes")
+        time_stop_hours = request.form.get("timer_stop_hours")
+        time_stop_minutes = request.form.get("timer_stop_minutes")
+        
+        if int(time_start_minutes) <= 9:
+            time_start_minutes = f"0{time_start_minutes}"
+        
+        if int(time_stop_minutes) <= 9:
+            time_stop_minutes = f"0{time_stop_minutes}"
+
+        if int(time_start_hours) <= 9:
+            time_start_hours = f"0{time_start_hours}"
+        
+        if int(time_stop_hours) <= 9:
+            time_stop_hours = f"0{time_stop_hours}"
+
+        time_start = f"{time_start_hours}:{time_start_minutes}"
+        time_stop = f"{time_stop_hours}:{time_stop_minutes}"
+        
+        timer.save_timer_config(timer_start = time_start, timer_stop=time_stop)
 
     return render_template('index.html', timer_log=timer.status)
 
