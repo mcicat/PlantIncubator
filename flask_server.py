@@ -32,18 +32,23 @@ class Timer:
     class TimerThread:         
         thread_obj = None
         def run_loop(self, time_start, time_stop):
+                        
+            flag_led_on = False
+
             while (self.run_thread):
 
                 time = datetime.now()
                 time_start_obj = datetime.strptime(time_start,"%H:%M")
                 time_stop_obj = datetime.strptime(time_stop,"%H:%M")
 
-                if (time.hour == time_start_obj.hour and time.minute == time_start_obj.minute):
+                if (time.hour == time_start_obj.hour and time.minute == time_start_obj.minute and not flag_led_on):
                     led.change_status(True)
-                elif (time.hour == time_stop_obj.hour and time.minute == time_stop_obj.minute):
+                    flag_led_on = True
+                elif (time.hour == time_stop_obj.hour and time.minute == time_stop_obj.minute and flag_led_on):
                     led.change_status(False)
-                
-                t.sleep(60) 
+                    flag_led_on = False
+            
+                t.sleep(.5) 
 
         def run_thread_timer(self, time_start, time_stop):
             self.run_thread = True
