@@ -123,7 +123,7 @@ config_filename = 'config.conf'
 @app.route('/', methods=['GET', 'POST'])
 def index():
     d = datetime.now()
-    timer.status = f"Current server time = {d.hour}:{d.minute}"
+    timer.status = f"Current server time = {d.hour:02d}:{d.minute:02d}"
     return render_template('index.html', timer_log=timer.status)
 
 @app.route('/led_on', methods=['GET', 'POST'])
