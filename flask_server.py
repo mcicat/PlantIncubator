@@ -32,6 +32,8 @@ class Timer:
     class TimerThread:         
         thread_obj = None
         def run_loop(self, time_start, time_stop):
+
+            print("Initalizing loop.")
                         
             flag_led_on = False
 
@@ -120,6 +122,8 @@ config_filename = 'config.conf'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    d = datetime.now()
+    timer.status = f"Current server time = {d.hour}:{d.minute}"
     return render_template('index.html', timer_log=timer.status)
 
 @app.route('/led_on', methods=['GET', 'POST'])
@@ -146,17 +150,21 @@ def timer_on():
         time_stop_hours = request.form.get("timer_stop_hours")
         time_stop_minutes = request.form.get("timer_stop_minutes")
         
-        if int(time_start_minutes) <= 9:
-            time_start_minutes = f"0{time_start_minutes}"
+        start_minutes = int(time_start_minutes)
+        if  start_minutes <= 9:
+            time_start_minutes = f"0{start_minutes}"
         
-        if int(time_stop_minutes) <= 9:
-            time_stop_minutes = f"0{time_stop_minutes}"
+        stop_minutes = int(time_stop_minutes)
+        if  stop_minutes <= 9:
+            time_stop_minutes = f"0{stop_minutes}"
 
-        if int(time_start_hours) <= 9:
-            time_start_hours = f"0{time_start_hours}"
+        start_hours = int(time_start_hours)
+        if  start_hours <= 9:
+            time_start_hours = f"0{start_hours}"
         
-        if int(time_stop_hours) <= 9:
-            time_stop_hours = f"0{time_stop_hours}"
+        stop_hours = int(time_stop_hours)
+        if int(stop_hours) <= 9:
+            time_stop_hours = f"0{stop_hours}"
 
         time_start = f"{time_start_hours}:{time_start_minutes}"
         time_stop = f"{time_stop_hours}:{time_stop_minutes}"

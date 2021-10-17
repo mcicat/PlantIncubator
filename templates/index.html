@@ -9,60 +9,6 @@
 <div class="cntr">
     <a href="."><img src="static/logo.png" width="15%" style="padding: 30px;"></a>
 </div>
-<div>
-    <p id="txt_time" style="text-align: center;"></p>
-    <script>
-        var txt = document.getElementById("txt_time")
-
-        var xmlHttp;
-        function srvTime() {
-            try {
-                //FF, Opera, Safari, Chrome
-                xmlHttp = new XMLHttpRequest();
-            }
-            catch (err1) {
-                //IE
-                try {
-                    xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
-                }
-                catch (err2) {
-                    try {
-                        xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
-                    }
-                    catch (eerr3) {
-                        //AJAX not supported, use CPU time.
-                        alert("AJAX not supported");
-                    }
-                }
-            }
-            xmlHttp.open('HEAD', window.location.href.toString(), false);
-            xmlHttp.setRequestHeader("Content-Type", "text/html");
-            xmlHttp.send('');
-            return xmlHttp.getResponseHeader("Date");
-        }
-
-        var st = srvTime();
-        var date = new Date(st);
-
-        hours = date.getHours()
-        if (hours <= 9) {
-            var hours_str = `0${hours}`
-        }
-        else {
-            var hours_str = `${hours}`
-        }
-
-        minutes = date.getMinutes()
-        if (minutes <= 9) {
-            var minutes_str = `0${mintues}`
-        }
-        else {
-            var minutes_str = `${minutes}`
-        }
-
-        txt.innerHTML = `Current server time: ${hours_str}:${minutes_str}`
-    </script>
-</div>
 
 <div class="cntr">
     <form method="post" action="/led_on" class="side_by_side">
@@ -86,7 +32,7 @@
                 </div>
 
                 <div>
-                    <p class="side_by_side">Start time:</p>
+                    <p class="side_by_side">End time:</p>
                     <input class="side_by_side" type="number" id="quantity" name="timer_stop_hours" min="0" max="23">
                     <p class="side_by_side">:</p>
                     <input class="side_by_side" type="number" id="quantity" name="timer_stop_minutes" min="0" max="59">
