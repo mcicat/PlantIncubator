@@ -22,38 +22,95 @@
     </form>
 
     <div style="margin-top: 1cm;">
-        <form method="post" action="/timer_on">
-            <p>Status: {{ (timer_log | safe) }}</p>
+        <form method="post" action="/led_timer_on">
+            <p>Status: {{ (led_timer_log | safe) }}</p>
 
             <div id="timer_panel">
                 <div>
                     <p class="side_by_side">Start time:</p>
-                    <input class="side_by_side" type="number" id="quantity" name="timer_start_hours" min="0" max="23">
+                    <input class="side_by_side" type="number" id="quantity" name="led_start_hours" min="0" max="23">
                     <p class="side_by_side">:</p>
-                    <input class="side_by_side" type="number" id="quantity" name="timer_start_minutes" min="0" max="59">
+                    <input class="side_by_side" type="number" id="quantity" name="led_start_minutes" min="0" max="59">
                 </div>
 
                 <div>
                     <p class="side_by_side">End time:</p>
-                    <input class="side_by_side" type="number" id="quantity" name="timer_stop_hours" min="0" max="23">
+                    <input class="side_by_side" type="number" id="quantity" name="led_stop_hours" min="0" max="23">
                     <p class="side_by_side">:</p>
-                    <input class="side_by_side" type="number" id="quantity" name="timer_stop_minutes" min="0" max="59">
+                    <input class="side_by_side" type="number" id="quantity" name="led_stop_minutes" min="0" max="59">
                 </div>
             </div>
 
             <div>
-                <input class="btn" value="SET TIMER" name="timer_set" type="submit" width="4cm"></input>
+                <input class="btn" value="SET LED TIMER" name="timer_set" type="submit" width="4cm"></input>
             </div>
         </form>
-        <form method="post" action="/timer_off">
-            <input class="btn" value="UNSET TIMER" name="timer_set" type="submit" width="4cm"></input>
+        <form method="post" action="/led_timer_off">
+            <input class="btn" value="UNSET LED TIMERS" name="timer_set" type="submit" width="4cm"></input>
         </form>
     </div>
+
+    <div class="text_water">
+        <h1>PUMP</h1>
+    </div>
+
+    <form method="post" action="/pump_on" class="side_by_side">
+        <input value="PUMP ON" name="btn" class="btn" type="submit"></input>
+    </form>
+
+    <form method="post" action="/pump_off" class="side_by_side">
+        <input value="PUMP OFF" name="btn" class="btn" type="submit"></input>
+    </form>
+
+    <div style="margin-top: 1cm;">
+        <form method="post" action="/pump_timer_on">
+            <p>Status: {{ (pump_timer_log | safe) }}</p>
+
+            <div id="timer_panel">
+                <div>
+                    <p class="side_by_side">Start time:</p>
+                    <input class="side_by_side" type="number" id="quantity" name="pump_start_hours" min="0" max="23">
+                    <p class="side_by_side">:</p>
+                    <input class="side_by_side" type="number" id="quantity" name="pump_start_minutes" min="0" max="59">
+                </div>
+
+                <div>
+                    <p class="side_by_side">End time:</p>
+                    <input class="side_by_side" type="number" id="quantity" name="pump_stop_hours" min="0" max="23">
+                    <p class="side_by_side">:</p>
+                    <input class="side_by_side" type="number" id="quantity" name="pump_stop_minutes" min="0" max="59">
+                </div>
+            </div>
+
+            <div>
+                <input class="btn" value="SET PUMP TIMER" name="timer_set" type="submit" width="4cm"></input>
+            </div>
+        </form>
+        <form method="post" action="/pump_timer_off">
+            <input class="btn" value="UNSET PUMP TIMERS" name="timer_set" type="submit" width="4cm"></input>
+        </form>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <td>DEVICE</td>
+                <td>TIMER START</td>
+                <td>TIMER STOP</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table_data %}
+            <tr>
+                {% for cell in row %}
+                <td>{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
-<div class="cntr text_water">
-    <h1>PUMP</h1>
-</div>
 
 
 {% endblock %}
