@@ -19,9 +19,9 @@
         <input value="LED OFF" name="btn" class="btn" type="submit"></input>
     </form>
 
-    <div style="margin-top: 2cm;">
+    <div style="margin-top: 1cm;">
         <form method="post" action="/timer_on">
-            <p>Status: {{ (timer_log) }}</p>
+            <p>Status: {{ (timer_log | safe) }}</p>
 
             <div id="timer_panel">
                 <div>

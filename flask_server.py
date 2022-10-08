@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 
 from os import name, stat, path, remove
-from flask import Flask, render_template, url_for, flash, request
+from flask import Flask, render_template, url_for, flash, request, escape
 from werkzeug.utils import redirect
 import json 
 from  datetime import date, datetime
@@ -13,11 +13,9 @@ import RPi.GPIO as GPIO
 #LED CLASS
 
 class Led:
-    
     def __init__(self, pin):
         self.pin = pin
 
-        GPIO.setmode(GPIO.BOARD)   
         GPIO.setup(self.pin, GPIO.OUT, initial=GPIO.LOW)
 
     def change_status(self, status):
@@ -27,6 +25,22 @@ class Led:
         else:
             print("Turning led off...")
             GPIO.output(self.pin, GPIO.LOW) # Turn off
+
+class Pump:
+    def __init__(self, pin):
+        self.pin = pin
+
+        GPIO.setup(self.pin, GPIO.OUT, initial=GPIO.LOW)
+
+    def change_status(self, status):
+        if (status):
+            print("Turning pump on...")
+            GPIO.output(self.pin, GPIO.LOW) # Turn on
+        else:
+            print("Turning pump off...")
+            GPIO.output(self.pin, GPIO.HIGH) # Turn off
+
+
 
 class Timer: 
     class TimerThread:         
@@ -123,7 +137,15 @@ config_filename = 'config.conf'
 @app.route('/', methods=['GET', 'POST'])
 def index():
     d = datetime.now()
-    timer.status = f"Current server time = {d.hour:02d}:{d.minute:02d}"
+    timer_text =  f"Current server time = {d.hour:02d}:{d.minute:02d}"
+
+    if (timer.time_start):
+        timer_text += f"\nTimer starts = {timer.time_start}"
+    if (timer.time_stop):
+        timer_text += f"\nTimer stops = {timer.time_stop}"
+
+    timer_text =  str(escape(timer_text)).replace('\n', '<br/>')
+    timer.status = timer_text
     return render_template('index.html', timer_log=timer.status)
 
 @app.route('/led_on', methods=['GET', 'POST'])
@@ -183,6 +205,7 @@ def timer_off():
 #MAIN 
 
 if __name__ == "__main__":    
+    GPIO.setmode(GPIO.BOARD)   
     app.run(debug=True, host="0.0.0.0", use_reloader=False)
 
 
