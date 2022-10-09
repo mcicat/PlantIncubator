@@ -221,22 +221,26 @@ def index():
     d = datetime.now()
     timer_text =  f"Current server time = {d.hour:02d}:{d.minute:02d}"
     timer.status = timer_text
-    return render_template('index.html', led_timer_log=timer.status, table_data = parse_timers(timer.timers))
+    return render_template('index.html', timer_log=timer.status, table_data = parse_timers(timer.timers))
 
 # LED
 @app.route('/led_on', methods=['GET', 'POST'])
 def led_on():
     if request.method == 'POST':
         led.change_status(status=True)
+
+    timer.status = "LED on..."
         
-    return render_template('index.html', led_timer_log=timer.status, table_data = parse_timers(timer.timers))
+    return render_template('index.html', timer_log=timer.status, table_data = parse_timers(timer.timers))
     
 @app.route('/led_off', methods=['GET', 'POST'])
 def led_off():
     if request.method == 'POST':
         led.change_status(status=False)
+    
+    timer.status = "LED turned off..."
         
-    return render_template('index.html', led_timer_log=timer.status, table_data = parse_timers(timer.timers))
+    return render_template('index.html', timer_log=timer.status, table_data = parse_timers(timer.timers))
 
 @app.route('/led_timer_on', methods=['POST'])
 def led_timer_on():
@@ -257,15 +261,17 @@ def led_timer_off():
     if request.method == 'POST':
         timer.discard_timer_config(led)
         
-    return render_template('index.html', led_timer_log=timer.status, table_data = parse_timers(timer.timers))
+    return render_template('index.html', timer_log=timer.status, table_data = parse_timers(timer.timers))
 
 #PUMP 
 @app.route('/pump_on', methods=['GET', 'POST'])
 def pump_on():
     if request.method == 'POST':
         pump.change_status(status=True)
+
+    timer.status = "Pump turned on..."
         
-    return render_template('index.html', led_timer_log=timer.status, table_data = parse_timers(timer.timers))
+    return render_template('index.html', timer_log=timer.status, table_data = parse_timers(timer.timers))
 
 
 @app.route('/pump_off', methods=['GET', 'POST'])
@@ -273,7 +279,9 @@ def pump_off():
     if request.method == 'POST':
         pump.change_status(status=False)
         
-    return render_template('index.html', led_timer_log=timer.status, table_data = parse_timers(timer.timers))
+    timer.status = "Pump turned off..."
+
+    return render_template('index.html', timer_log=timer.status, table_data = parse_timers(timer.timers))
 
 @app.route('/pump_timer_on', methods=['POST'])
 def pump_timer_on():
@@ -287,14 +295,14 @@ def pump_timer_on():
 
         timer.save_timer_config(pump, timer_start = time_start, timer_stop=time_stop)
 
-    return render_template('index.html', pump_timer_log=timer.status, table_data = parse_timers(timer.timers))
+    return render_template('index.html', timer_log=timer.status, table_data = parse_timers(timer.timers))
 
 @app.route('/pump_timer_off', methods=['POST'])
 def pump_timer_off():
     if request.method == 'POST':
         timer.discard_timer_config(pump)
         
-    return render_template('index.html', pump_timer_log=timer.status, table_data = parse_timers(timer.timers))
+    return render_template('index.html', timer_log=timer.status, table_data = parse_timers(timer.timers))
 
 #MAIN 
 
